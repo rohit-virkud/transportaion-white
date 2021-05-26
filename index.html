@@ -821,6 +821,15 @@ a{
           {
                transform: scale(1);
           }
+          .screenfirst
+          {
+            transform: translateY(0vw);
+            transition: 1.2s all ease-in-out;
+          }
+          .screen01anim
+          {
+            transform: translateY(150vw);
+          }
 
 
   </style>
@@ -872,7 +881,7 @@ a{
       <div class="overlaywrapper1"></div>
       <div class="slide-inner">
         <div class="slide-01">
-            <div class="container">
+            <div class="container screenfirst screen01anim">
 
                 <div class="logo" data-swiper-parallax="-300"></div>
 
@@ -1243,6 +1252,7 @@ setInterval(function(){
 
   $(document).ready(function() {
       $('.loader-div').fadeOut();
+      $('.screenfirst').removeClass("screen01anim");
 });
 
     
