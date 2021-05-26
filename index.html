@@ -276,7 +276,7 @@ a{
             width: min(10.896vw,6vh);
             height:min(10.896vw,6vh);
             top: 3%;
-            right: 6%;
+            right: 0%;
             left: auto;
             bottom: auto;
             
@@ -823,12 +823,14 @@ a{
           }
           .screenfirst
           {
-            transform: translateY(0vw);
-            transition: 1.2s all ease-in-out;
+            transform: translateY(0%);
+            opacity: 1;
+            transition: 2s transform ease-out;
           }
           .screen01anim
           {
-            transform: translateY(150vw);
+            transform: translateY(100%);
+            opacity: 0;
           }
 
 
@@ -1251,9 +1253,14 @@ setInterval(function(){
 
 
   $(document).ready(function() {
-      $('.loader-div').fadeOut();
+
+    setTimeout(function() {
+        $('.loader-div').fadeOut();
       $('.screenfirst').removeClass("screen01anim");
-});
+      }, 2000);
+     
+
+     });
 
     
        
