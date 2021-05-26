@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
   <style>
       *{
             margin: 0;
@@ -18,6 +19,99 @@
         body{
             background-color: #ffffff;
            
+        }
+
+        .loader-div {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background: #ffff;
+        text-align: center;
+        z-index: 999;
+        
+        
+        }
+
+        .loader-div h1 {
+        margin: 0;
+        padding: 0;
+        font-family: ‘Arial Narrow’, sans-serif;
+        font-weight: 100;
+        font-size: 4vw;
+        color: black;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+
+        .loader-div h1 span {
+        position: relative;
+        top: 0.63em;  
+        display: inline-block;
+        text-transform: uppercase;  
+        opacity: 0;
+        transform: rotateX(-90deg);
+        
+        }
+
+        .loader-div h1  .let1 {
+        animation: drop 1.2s ease-in-out infinite;
+        animation-delay: 1.2s;
+        }
+
+        .loader-div h1  .let2 {
+        animation: drop 1.2s ease-in-out infinite;
+        animation-delay: 1.3s;
+        }
+
+        .loader-div h1  .let3 {
+        animation: drop 1.2s ease-in-out infinite;
+        animation-delay: 1.4s;
+        }
+
+        .loader-div h1  .let4 {
+        animation: drop 1.2s ease-in-out infinite;
+        animation-delay: 1.5s;
+
+        }
+
+        .loader-div h1  .let5 {
+        animation: drop 1.2s ease-in-out infinite;
+        animation-delay: 1.6s;
+        }
+
+        .loader-div h1  .let6 {
+        animation: drop 1.2s ease-in-out infinite;
+        animation-delay: 1.7s;
+        }
+
+        .loader-div h1 .let7 {
+        animation: drop 1.2s ease-in-out infinite;
+        animation-delay: 1.8s;
+        }
+
+        @keyframes drop {
+            10% {
+                opacity: 0.5;
+            }
+            20% {
+                opacity: 1;
+                top: 3.78em;
+                transform: rotateX(-360deg);
+            }
+            80% {
+                opacity: 1;
+                top: 3.78em;
+                transform: rotateX(-360deg);
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 0;
+                top: 6.94em
+            }
         }
       
         
@@ -734,6 +828,18 @@ a{
 </head>
 <body>
 
+    <div class="loader-div">
+        <h1>
+            <span class="let1">l</span>  
+            <span class="let2">o</span>  
+            <span class="let3">a</span>  
+            <span class="let4">d</span>  
+            <span class="let5">i</span>  
+            <span class="let6">n</span>  
+            <span class="let7">g</span>  
+          </h1>
+    </div>
+
 
     <div class="share-slide" id="share-slide">
         <img src="closeicon.png" alt="close-icon"  class="close-icon" onclick="closeSlide()"  />
@@ -1133,6 +1239,12 @@ setInterval(function(){
             }
 
     } 
+
+
+  $(document).ready(function() {
+      $('.loader-div').fadeOut();
+});
+
     
        
    
